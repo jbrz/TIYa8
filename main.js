@@ -84,10 +84,18 @@
   EightMaterials.forEach(function(i) {
     var answer5string = i.title + ' is made of ' + i.materials.length +' materials'
     var text5 = document.createTextNode(answer5string);
-    var line = document.createElement('br');
+    var line = document.createElement('<br>');
     var answer5 = document.querySelector('#answer5');
     answer5.appendChild(textNode5);
     answer5.appendChild(linebreak);
+
+  itemMaterials.forEach(function(x){
+    var text5= document.createTextNode(x);
+    var line = document.createElement('<br>');
+    var answer5 = document.querySelector('#answer5');
+    answer5.appendChild(text5);
+    answer5.appendChild(line);
+  }
   });
 
 // Answer to Question 6 - How many items were made by their sellers?
