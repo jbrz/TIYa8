@@ -1,14 +1,14 @@
 // Answer to Question 1 - Show me how to calculate the average price of all items.
 
   // Answer Formulae
-  var AllPrices = items.map(function(i) {console.log(i.price);});
+  var AllPrices = items.map(function(i) {return i.price;});
   var AvPrice  = AllPrices.reduce(function(a,b){
     var TotalPrice = a + b
-    console.log(a + b)
+    return TotalPrice
   }) / AllPrices.length;
 
   // Filling the Page
-  var answer1string = "The average price is " + AvPrice.toFixed(2)
+  var answer1string = "The average price is $" + AvPrice.toFixed(2)
   var text1 = document.createTextNode(answer1string);
   var answer1 = document.querySelector('#answer1');
   answer1.appendChild(text1);
@@ -20,7 +20,7 @@
   items.filter(function(i) {                           /*Filter and Map do the same thing here.  Why?!*/
     if((14 < i.price)&&(i.price < 18)){
     RangePrices.push(i.title);
-    console.log(RangePrices);
+    return RangePrices;
     }
   });
 
@@ -41,8 +41,13 @@
   items.filter(function(i) {
     if(i.currency_code === "GBP") {
       GBPitem.push(i);
-      console.log(GBPitem.title + " costs " + GBPitem.price);
-  }});
+      var GBPtitle = GBPitem.title;
+      var GBPprice = GBPitem.price;
+      return GBPitem;
+      return GBPtitle
+      return GBPprice
+    }
+  });
 
   // Filling the Page
   var answer3string = GBPitem.title + " costs " + GBPitem.price
@@ -55,8 +60,8 @@
   // Answer Formulae
   var Wooditem = []
   items.filter(function(i) {
-    if(i.currency_code === "GBP") {
-      Wooditem.push(i);
+    if(i.materials == 'wood') {
+      Wooditem.push(i.title);
       return Wooditem.title;
   }});
 
@@ -64,7 +69,7 @@
   var answer4 = document.querySelector('#answer4');
   
   Wooditem.forEach(function(i){
-    var text4 = document.createTextNode(i);
+    var text4 = document.createTextNode(i.title);
     var line = document.createElement('br');
     answer4.appendChild(text4);
     answer4.appendChild(line);
@@ -74,12 +79,14 @@
 
   // Answer Formulae
   var EightMaterials = []
+  var itemMaterials = []
   items.filter(function(i) {
-    var itemMaterials = i.materials;
-    if (itemMaterials.length >= 8) {
+    if (i.materials.length >= 8) {
       EightMaterials.push(i);
     };
+    itemMaterials.push(EightMaterials.materials);
     return EightMaterials;
+    return itemMaterials;
   });
 
   // Filling the Page
@@ -108,7 +115,7 @@
     if (i.who_made === 'i_did') {
       MadeBySeller.push(i);
     }
-    console.log(MadeBySeller);
+    return MadeBySeller;
   })
 
   // Filling the Page
