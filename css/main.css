@@ -1,11 +1,15 @@
 .container {
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  color: #555555; }
 
 div .banner {
-  max-width: 100%;
-  height: 120px;
   background-size: cover;
-  background-image: url("../banner.jpg"); }
+  background-image: url("../banner.jpg");
+  color: #FFFFFF;
+  height: 120px;
+  max-width: 100%;
+  margin-bottom: 0px;
+  text-align: center; }
 
 .main {
   background-color: #EEEEEE; }
@@ -39,7 +43,7 @@ h2.background {
 
 footer {
   background-color: #4B494F;
-  color: #EEEEEE;
+  color: #999999;
   height: 60px;
   margin-top: 0;
   padding-top: 80px;
