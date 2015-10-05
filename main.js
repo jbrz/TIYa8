@@ -30,7 +30,8 @@
   RangePrices.forEach(function(i){
     var text2 = document.createTextNode(i);
     var line = document.createElement('<br>');
-    answer2.appendChild(textNode2; line);
+    answer2.appendChild(text2);
+    answer2.appendChild(line);
   })
 
 // Answer to Question 3 - Which item has a "GBP" currency code? Display it's name and price.
@@ -65,7 +66,8 @@
   Wooditem.forEach(function(i){
     var text4 = document.createTextNode(i);
     var line = document.createElement('<br>');
-    answer4.appendChild(textNode4; line);
+    answer4.appendChild(text4);
+    answer4.appendChild(line);
   })
 
 // Answer to Question 5 - Which items are made of eight or more materials? Display the name, number of items and the items it is made of.
@@ -86,8 +88,8 @@
     var text5 = document.createTextNode(answer5string);
     var line = document.createElement('<br>');
     var answer5 = document.querySelector('#answer5');
-    answer5.appendChild(textNode5);
-    answer5.appendChild(linebreak);
+    answer5.appendChild(text5);
+    answer5.appendChild(line);
 
   itemMaterials.forEach(function(x){
     var text5= document.createTextNode(x);
@@ -110,7 +112,7 @@
   })
 
   // Filling the Page
-    var answer6string = MadeBySeller.length + " were made by their sellers."
+    var answer6string = MadeBySeller.length + " items were made by their sellers."
     var text6 = document.createTextNode(answer6string);
     var answer6 = document.querySelector('#answer6');
     answer6.appendChild(text6);
