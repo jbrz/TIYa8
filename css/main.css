@@ -16,6 +16,8 @@ div .banner {
   background-color: #EEEEEE;
   padding-bottom: 50px;
   padding-top: 50px; }
+  .main p {
+    text-align: center; }
 
 h3 {
   font: 33px sans-serif;
