@@ -1,5 +1,5 @@
 .container {
-  font-family: sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   color: #555555; }
 
 div .banner {
@@ -9,21 +9,24 @@ div .banner {
   height: 120px;
   max-width: 100%;
   margin-bottom: 0px;
-  text-align: center; }
+  text-align: center;
+  vertical-align: middle; }
 
 .main {
-  background-color: #EEEEEE; }
+  background-color: #EEEEEE;
+  padding-bottom: 50px;
+  padding-top: 50px; }
 
-h2 {
+h3 {
   font: 33px sans-serif;
   margin-top: 30px;
   text-align: center;
   text-transform: uppercase; }
 
-h2.background {
+h3.background {
   position: relative;
   z-index: 1; }
-  h2.background:before {
+  h3.background:before {
     border-top: 2px solid #dfdfdf;
     content: "";
     margin: 0 auto;
@@ -36,7 +39,7 @@ h2.background {
     bottom: 0;
     width: 95%;
     z-index: -1; }
-  h2.background span {
+  h3.background span {
     /* to hide the lines from behind the text, you have to set the background color the same as the container */
     background: #EEEEEE;
     padding: 0 15px; }
