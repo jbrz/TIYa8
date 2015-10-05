@@ -80,14 +80,20 @@
   // Answer Formulae
   var EightMaterials = []
   var itemMaterials = []
+
   items.filter(function(i) {
     if (i.materials.length >= 8) {
       EightMaterials.push(i);
     };
-    itemMaterials.push(EightMaterials.materials);
     return EightMaterials;
-    return itemMaterials;
   });
+
+  EightMaterials.filter(function(i) {
+    if (i.materials.length >= 8) {
+      itemMaterials.push(i.materials);
+      return itemMaterials;
+    };
+  })
 
   // Filling the Page
   EightMaterials.forEach(function(i) {
@@ -99,7 +105,7 @@
     answer5.appendChild(line);
 
   itemMaterials.forEach(function(x){
-    var text5= document.createTextNode(x);
+    var text5 = document.createTextNode(x);
     var line = document.createElement('br');
     var answer5 = document.querySelector('#answer5');
     answer5.appendChild(text5);
