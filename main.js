@@ -97,8 +97,8 @@
     var answer5 = document.querySelector('#answer5');
     answer5.appendChild(text5);
     answer5.appendChild(line);
-  }
-  });
+  })
+});
 
 // Answer to Question 6 - How many items were made by their sellers?
 
