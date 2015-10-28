@@ -41,16 +41,14 @@
   items.filter(function(i) {
     if(i.currency_code === "GBP") {
       GBPitem.push(i);
-      var GBPtitle = GBPitem.title;
-      var GBPprice = GBPitem.price;
-      return GBPitem;
-      return GBPtitle
-      return GBPprice
+      return(GBPitem);
     }
   });
+  var GBPtitle = GBPitem[0].title;
+  var GBPprice = GBPitem[0].price;
 
   // Filling the Page
-  var answer3string = GBPitem.title + " costs " + GBPitem.price
+  var answer3string = GBPtitle + " costs " + "$" + GBPprice
   var text3 = document.createTextNode(answer3string);
   var answer3 = document.querySelector('#answer3');
   answer3.appendChild(text3);  
@@ -59,17 +57,20 @@
 
   // Answer Formulae
   var Wooditem = []
-  items.filter(function(i) {
-    if(i.materials == 'wood') {
-      Wooditem.push(i.title);
-      return Wooditem.title;
-  }});
+  var itemsWithWood = items.forEach(function(i) {
+    var itemMaterials = i.materials;
+    itemMaterials.forEach(function(x) {
+      if (x === "wood") {
+        Wooditem.push(i.title);
+      };
+    });
+  });
 
   // Filling the Page
   var answer4 = document.querySelector('#answer4');
   
   Wooditem.forEach(function(i){
-    var text4 = document.createTextNode(i.title);
+    var text4 = document.createTextNode(i);
     var line = document.createElement('br');
     answer4.appendChild(text4);
     answer4.appendChild(line);
@@ -78,19 +79,16 @@
 // Answer to Question 5 - Which items are made of eight or more materials? Display the name, number of items and the items it is made of.
 
   // Answer Formulae
-  var EightMaterials = []
-  var itemMaterials = []
-  items.filter(function(i) {
-    if (i.materials.length >= 8) {
-      EightMaterials.push(i);
+  var eightMaterials = []
+  var itemMaterials = items.filter(function(x){
+    var itemMats = x.materials;
+    if (itemMats.length >= 8) {
+      eightMaterials.push(x);
     };
-    itemMaterials.push(EightMaterials.materials);
-    return EightMaterials;
-    return itemMaterials;
   });
 
   // Filling the Page
-  EightMaterials.forEach(function(i) {
+  eightMaterials.forEach(function(i) {
     var answer5string = i.title + ' is made of ' + i.materials.length +' materials'
     var text5 = document.createTextNode(answer5string);
     var line = document.createElement('br');
@@ -98,7 +96,7 @@
     answer5.appendChild(text5);
     answer5.appendChild(line);
 
-  itemMaterials.forEach(function(x){
+  i.materials.forEach(function(x){
     var text5= document.createTextNode(x);
     var line = document.createElement('br');
     var answer5 = document.querySelector('#answer5');
